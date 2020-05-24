@@ -1,6 +1,6 @@
 server <- function(input, output, session) {
-  #daysSince10 <- read_csv("days.csv")
-  daysSince10<-drop_read_csv('shinyapp/days.csv', dtoken = token)
+  daysSince10 <- read_csv("days.csv")
+  #daysSince10<-drop_read_csv('shinyapp/days.csv', dtoken = token)
   observe({
     moddays <- daysSince10[daysSince10$`Countries and territories` %in% input$Country,]
     output$trend <- renderPlot({
